@@ -1,0 +1,887 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Cabin:ital,wght@0,400..700;1,400..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+
+/* navbar */
+#dropshdnav{
+    background-color: #ffffff;
+    height: 80px;
+}
+
+@media (max-width: 992px) {
+    #dropshdnav{
+      width: 100%;
+      max-width: none;
+    }
+}
+
+#navi {
+  margin-left: 15%; 
+  margin-right: 15%; 
+}
+
+@media (max-width: 1200px){
+  #navi {
+      margin-left: 15%; 
+      margin-right: 15%; 
+  }
+}
+
+@media (max-width: 992px){
+  #navi {
+      margin-left: 10%; 
+      margin-right: 10%; 
+  }
+}
+
+@media (max-width: 768px){
+  #navi {
+      margin-left: 0%; 
+      margin-right: 0%; 
+  }
+}
+
+.navbar{
+    height: 80px;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand img {
+    height: 50px;
+}
+
+#logo{
+    max-height: 100%;
+}
+
+#datetime{
+    margin-right: auto;
+}
+
+#time{
+    font-family: "League Spartan";
+    font-weight: 700;
+    color:black;
+    font-size: 12px;
+}
+  
+#date{
+    font-family: "League Spartan";
+    font-weight: 700;
+    color:#808080;
+    font-size: 16px;
+}
+
+@media (max-width: 576px) {
+    #time {
+      font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    #date {
+      font-size: 14px;
+    }
+}
+
+.drop-shadow {
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.fa-wifi {
+  margin-right: 10px;
+}
+#buttonpasang{
+  width: 180px;;
+  height: 35px;
+  font-family: "League Spartan";
+  font-size: 12px;
+  font-weight: bold; 
+  background-color: #19e768; 
+  color: #ffffff; 
+  border: none; 
+  border-radius: 20px; 
+  text-align: center;
+  line-height: 0px;
+}
+#buttonpasang:active {
+    border-color:#14c357;
+    border: none;
+}
+.custom-icon{
+    font-size: 1.5rem; 
+    display: inline-block; 
+    vertical-align: middle; 
+    margin-right: 0.6rem;
+}
+#buttonpasang:hover {
+    background-color: #14c357;
+    color: #ffffff;
+}
+@media (max-width: 1200px) {
+  #buttonpasang {
+  width: 140px;
+  height: 32px;
+  font-size: 10px;
+  padding: 4px 8px; 
+  }
+}
+
+@media (max-width: 992px) {
+    #buttonpasang {
+    width: 140px;
+    height: 32px;
+    font-size: 10px;
+    padding: 4px 8px; 
+    }
+  }
+  
+@media (max-width: 768px) {
+    #buttonpasang {
+    width: 115px;
+    height: 30px;
+    font-size: 8px; 
+    padding: 2px 4px; 
+    }
+  }
+
+/* Ukuran logo responsive*/
+@media (max-width: 992px) {
+#logo {
+    width: 80px; 
+    height: auto; 
+    }
+}
+  
+@media (max-width: 768px) {
+#logo {
+    width: 60px; 
+    height: auto; 
+    }
+}
+
+/*Floating button*/
+.floating-button {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #25d366;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+   }
+   
+#wafloat {
+  position: absolute;
+  line-height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 30px; 
+  color: #ffffff;
+}
+
+.clicked {
+  border: none; 
+}
+
+#lblfloat {
+  opacity: 1;
+  font-family: "League Spartan";
+  text-align: start;
+  position: absolute;
+  left: -110px; 
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s, transform 0.5s;
+  background-color: #f0f0f0; 
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #333; 
+  font-size: 11px;
+}
+
+/* Animation for label fly-in */
+.label-fly-in {
+  opacity: 1;
+}
+
+/* Animation for label fly-out */
+.label-fly-out {
+  opacity: 0;
+}
+
+/*Floating card*/
+#floatcard {
+  opacity: 0;
+  width: 350px;
+  background-color: #ffffff;
+  bottom: 100px;
+  right: 20px;
+  position: fixed;
+  z-index: 999;
+  margin-top: 20px;
+  border-radius: 12px;
+  transform: translateY(20px);
+  transition: opacity 0.5s, trasform 0.5s;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  }
+
+#floatcard.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width:768px){
+  #floatcard {
+    width: 320px;
+  }
+}
+#wa-card1{
+  font-size: 40px;
+  line-height: 10px;
+}
+
+#top {
+    background-color: #28a745;
+    color: white;
+    padding: 10px; 
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 0; 
+  }
+  
+#bottom {
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+#buttoncardfloat {
+    padding: 10px;
+    background-color: (rgb(225, 225, 225));
+}
+  
+#buttoncardfloat:hover {
+    background-color: #f3f3f3;
+    color: #000000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+#person1 {
+    font-size: 40px;
+    line-height: 10px;
+}
+
+#hub0{
+  font-size: 0.8rem;
+  font-family: "Roboto";
+  }
+#hub {
+  font-size: 0.8rem;
+  font-family: "Roboto";
+  color: rgb(183, 183, 183);
+}
+#jamop {
+  color: #808080;
+  font-family: "Roboto";
+  color: rgb(183, 183, 183); ;
+}
+#mulai {
+  font-size: 1.5rem;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+#adm {
+  font-family: "Roboto";
+}
+
+#wa-card2 {
+  font-size: 25px;
+  color: #28a745;
+}
+
+@keyframes fadeInFlyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-fly-in {
+  animation: fadeInFlyIn 0.5s ease forwards;
+}
+
+@keyframes fadeOutFlyOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px); /* Fly out ke bawah */
+  }
+}
+
+.card-fly-out {
+  animation: fadeOutFlyOut 0.5s ease forwards;
+}
+
+/* Carousel */
+.carousel-item img {
+  pointer-events: none;
+}
+
+#carouselcont {
+    margin-top: 60px;
+    position: relative;
+    width: 100%; 
+    height: 370px;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+@media (max-width: 1500px) {
+    #carouselcont {
+      height: 340px;
+    }
+  }
+@media (max-width: 1200px) {
+    #carouselcont {
+      height: 270px;
+    }
+  }
+@media (max-width: 992px) {
+  #carouselcont {
+    height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  #carouselcont {
+    height: 240px;
+  }
+}
+@media (max-width: 576px) {
+  #carouselcont {
+    height: 180px;
+  }
+}
+@media (max-width: 480px) {
+  #carouselcont {
+    height: 150px;
+  }
+}
+
+.carousel-inner .carousel-item {
+    transition-duration: 4s;
+  }
+
+.carousel-item img {
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .carousel {
+        margin-left: 0;
+        margin-right: 0
+    }
+}
+@media (max-width: 768px) {
+    .carousel {
+        margin-left: 0;
+        margin-right: 0; 
+    }
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -50px; 
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    opacity: 1;
+  }
+
+  .carousel .carousel-indicators li {
+    background-color: rgb(36, 36, 36);
+  }
+
+  .carousel-indicators li {
+    width: 6px !important; 
+    height: 6px !important;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .carousel-indicators .active {
+    background-color: rgb(0, 0, 0); 
+    opacity: 1;
+  }
+
+/* welcome */
+#welcome{
+    margin-top: 50px;
+}
+#welcomewrapper {
+  align-items: center;
+}
+#welcomebox {
+  padding: 10px;
+}
+#welcometxt h4{
+  font-family: "Rubik";
+  font-size: 20px;
+  font-weight: bold;
+}
+#welcometxt h1{
+  font-family: "Rubik";
+  font-size: 40px;
+  color: #0088c3;
+  font-weight: bold;
+}
+
+#pwelcom {
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 12px;
+}
+
+#welcometxt h5{
+  font-family: "Rubik";
+  font-size: 16px;
+}
+@media (max-width:992px){
+  #welcometxt h5 {
+    font-size: 14px;
+  }
+}
+@media (max-width:768px){
+  #welcometxt h5{
+    font-size: 14px;
+  }
+}
+@media (max-width:576px){
+  #welcometxt h5{
+    font-size: 12px;
+  }
+}
+
+.buttoninfodet1 {
+    font-family: "League Spartan";
+    font-weight: bold;
+    background: linear-gradient(to bottom, #50bff2, #05AFFD);
+    color: #ffffff;
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 20px;
+    text-align: center;
+    line-height: 1px;
+  }
+  
+.buttoninfodet1:hover {
+    background: linear-gradient(to bottom, #05AFFD, #50bff2);
+    color: #ffffff;
+  }
+
+/* card container 1*/
+
+.card-title{
+  font-size: 1rem;
+  font-family: "League Spartan";
+}
+
+#cardcont1 {
+  position: relative;
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  padding-top: 50px;
+}
+
+#box1 {
+background-color: #05AFFD;
+padding: 10px;
+border-radius: 10px;
+}
+
+.kartu {
+  border: none; 
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4); 
+}
+.kartu:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.6); 
+}
+#Header1 {
+  margin: 10px;
+  text-align: center;
+  font-family: "League Spartan";
+  font-weight: 900;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+#cardnon1 {
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+#kiri1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100%; 
+  font-family: "League Spartan";
+}
+
+#angka1 {
+  font-weight: bold;
+  margin-top: -5px;
+  color: #000000;
+  font-size: 60px;
+}
+@media (max-width: 992px) {
+  #angka1 {
+      font-size: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  #angka1 {
+      font-size: 60px; 
+  }
+}
+#speed1 {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+#harga1 {
+  font-size: 12px;
+  margin-top: -10px;
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  #harga1 {
+      font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #harga1 {
+      font-size: 12px;
+  }
+}
+
+.buttoninfodet3 {
+  margin-top: 16px;
+  font-family: "League Spartan";
+  font-size: 6px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: black;
+  border-radius: 15px;
+}
+.buttoninfodet3 .bi {
+  padding: 2px;
+}
+
+#biaya {
+  font-size: 0.7rem;
+  font-family: "League Spartan";
+  margin-top: 20px;
+}
+
+/* card container 2*/
+#cardcont2 {
+  margin-top: -35px;
+  position: relative;
+  width: 100%; 
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  padding-top: 50px;
+}
+
+#box2 {
+background-color: #05AFFD;
+padding: 10px;
+border-radius: 10px;
+}
+
+.kartu2 {
+  border: none; 
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4); 
+}
+.kartu2:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.6); 
+}
+#Header2 {
+  margin: 10px;
+  text-align: center;
+  font-family: "League Spartan";
+  font-weight: 900;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+#cardnon2 {
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+#kiri2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  height: 100%; 
+  font-family: "League Spartan";
+}
+
+#angka2 {
+  font-weight: bold;
+  margin-top: -5px;
+  color: #000000;
+  font-size: 60px;
+}
+@media (max-width: 992px) {
+  #angka2 {
+      font-size: 50px; 
+  }
+}
+
+@media (max-width: 768px) {
+  #angka2 {
+      font-size: 60px; 
+  }
+}
+#speed2 {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+#harga2 {
+  font-size: 12px;
+  margin-top: -10px;
+  font-weight: bold;
+}
+@media (max-width: 992px) {
+  #harga2 {
+      font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #harga2 {
+      font-size: 12px;
+  }
+}
+
+.buttoninfodet {
+  font-family: "League Spartan";
+  font-weight: bold;
+  background: linear-gradient(to bottom, #50bff2, #05AFFD);
+  color: #ffffff;
+  width: 200px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 50px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1px;
+}
+
+.buttoninfodet:hover {
+  background: linear-gradient(to bottom, #05AFFD, #50bff2);
+  color: #ffffff;
+}
+@media (max-width: 1500px) {
+  .buttoninfodet {
+      margin-top: 35px;
+      font-size: 11px;
+  }
+}
+@media (max-width: 1200px) {
+  .buttoninfodet {
+      margin-top: 35px;
+      font-size: 10px;
+  }
+}
+@media (max-width: 992px) {
+  .buttoninfodet {
+      margin-top: 35px;
+      font-size: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttoninfodet {
+      margin-top: 20px;
+      font-size: 10px;
+  }
+}
+
+@media (max-width: 576px){
+  .buttoninfodet {
+    font-size: 10px;
+  }
+}
+
+#biaya2 {
+  font-size: 0.7rem;
+  font-family: "League Spartan";
+  margin-top: 20px;
+}
+
+/*Contact Card*/
+#contactcontainer{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#contactbox {
+  padding: 10px;
+}
+#contacttxt {
+  padding-top: 80px;
+  margin-bottom: 10px;
+}
+
+@media (max-width:992px){
+  #contacttxt {
+  padding-top: 20px;
+  }
+}
+@media (max-width:768px){
+  #contacttxt {
+  padding-top: 0px;
+  }
+}
+#contacttxt h2{
+  font-family: "Rubik";
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#contacttxt h1{
+font-family: "Rubik";
+font-size: 36px;
+color: #000000;
+font-weight: bold;
+}
+
+#pcontact {
+font-family: "Rubik";
+font-weight: 400;
+}
+
+#contactcard {
+  background-image: -webkit-linear-gradient(to bottom right, #19e768, #19e768,  #05AFFD);
+  background-image: linear-gradient(to bottom right, #19e768, #19e768,  #05AFFD);
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  line-height: 15px;
+  padding: 15px;
+  font-family: "Rubik";
+  font-size: 18px;
+}
+
+.hr {
+  color: #ffffff;
+}
+
+#person2, #clock1, #wa3{
+  margin-top: -30px;
+}
+
+/* accordion persyaratan*/
+#accordioncont1 {
+  margin-top: -35px;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  padding-top: 50px;
+}
+
+.accordion-item {
+  font-family: "League Spartan";
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #111;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.25);
+}
+.accordion-item-header {
+  background-color: #05AFFD;
+  color: #000000;
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.accordion-item-header::after {
+  content: "\25B8";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\25BE";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion-item-body-content ul {
+  list-style-type: decimal;
+}
+
+.accordion-item-body-content {
+  padding: 1rem;
+  line-height: 1.5rem;
+  border-top: 1px solid;
+  border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+}
+
+.footer {
+  text-align: center;
+  height: 240px;
+  background-color: #989898;
+}
+
+
