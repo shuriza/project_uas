@@ -10,11 +10,26 @@ class ExampleController extends Controller
     {
         $this->middleware('auth');
     }
-
-    public function table()
+    public function table(Request $request)
     {
-        return view('layouts.table-example');
+        // Query awal
+        $pesanan = \App\Models\Pesanan::query();
+    
+        // Filter berdasarkan status jika diisi
+        if ($request->has('status') && $request->status != '') {
+            $pesanan->where('status', $request->status);
+        }
+    
+        // Paginasi
+        $pesanan = $pesanan->paginate(10);
+    
+        // Return ke view
+        return view('layouts.table-example', compact('pesanan'));
     }
+    
+    
+    
+    
 
     public function clock()
     {

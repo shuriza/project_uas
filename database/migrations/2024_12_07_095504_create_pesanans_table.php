@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('emailClient');
             $table->string('teleponClient');
             $table->text('alamatClient');
-            $table->string('namaProduk');
-            $table->string('kategori');
+            $table->string('nama_produk');
+            $table->string('kategori_layanan');
             $table->string('pembayaranMelalui');
             $table->date('tanggalPemasangan');
             $table->text('catatan')->nullable();
+            $table->integer('harga');
             $table->timestamps();
         });
     }

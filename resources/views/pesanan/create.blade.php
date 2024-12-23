@@ -1,13 +1,18 @@
-<!-- resources/views/pesanan/create.blade.php -->
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pemesanan</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Clock Example')
+
+@push('style')
+    <!-- CSS Libraries -->
+@endpush
+
+@section('content')
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1>Langganan Paket Internet</h1>
+        </div>
+
     <div class="container">
         <h2 class="my-4">Form Input Pemesanan</h2>
 
@@ -45,10 +50,12 @@
 
                     <!-- Nama Produk -->
                     <div class="form-group">
-                        <label for="namaProduk">Nama Produk <span class="text-danger">*</span></label>
-                        <select class="form-control" id="namaProduk" name="namaProduk" required>
-                            <option value="bisnis_non_fup">Bisnis Non FUP</option>
-                            <option value="bisnis_basic_fup">Bisnis Basic FUP</option>
+                        <label for="nama_produk">Nama Produk</label>
+                        <select name="nama_produk" id="nama_produk" class="form-control" required>
+                            <option value="" disabled selected>Pilih Nama Produk</option>
+                            @foreach ($kategoris as $kategori)
+                                <option value="{{ $kategori->nama_produk }}">{{ $kategori->nama_produk }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
@@ -56,10 +63,9 @@
                 <div class="col-md-6">
                     <!-- Kategori Layanan -->
                     <div class="form-group">
-                        <label for="kategori">Kategori Layanan <span class="text-danger">*</span></label>
-                        <select class="form-control" id="kategori" name="kategori" required>
-                            <option value="paket_50mb">Paket 50 MB</option>
-                            <option value="paket_100mb">Paket 100 MB</option>
+                        <label for="kategori_layanan">Kategori Layanan</label>
+                        <select name="kategori_layanan" id="kategori_layanan" class="form-control" required>
+                            <option value="" disabled selected>Pilih Kategori Layanan</option>
                         </select>
                     </div>
 
@@ -86,6 +92,12 @@
                         <label for="catatan">Catatan</label>
                         <textarea class="form-control" id="catatan" name="catatan" rows="3"></textarea>
                     </div>
+
+                    <!-- Harga -->
+                    <div class="form-group">
+                        <label for="harga">Harga</label>
+                        <input type="text" id="harga" class="form-control" name="harga" readonly required>
+                    </div>
                 </div>
             </div>
             
@@ -97,5 +109,66 @@
             </div>
         </form>
     </div>
-</body>
-</html>
+
+    <!-- Script -->
+    <script>
+    const namaProdukSelect = document.getElementById('nama_produk');
+    const kategoriLayananSelect = document.getElementById('kategori_layanan');
+    const hargaInput = document.getElementById('harga');
+
+    // Event listener untuk Nama Produk
+    namaProdukSelect.addEventListener('change', function () {
+        const namaProduk = this.value;
+
+        // Bersihkan dropdown kategori layanan
+        kategoriLayananSelect.innerHTML = '<option value="" disabled selected>Pilih Kategori Layanan</option>';
+        hargaInput.value = ''; // Reset harga
+
+        // AJAX untuk mengambil kategori layanan
+        fetch(`/pesanan/create?nama_produk=${namaProduk}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                } else {
+                    // Tambahkan kategori layanan ke dropdown
+                    data.forEach(function (kategori) {
+                        const option = document.createElement('option');
+                        option.value = kategori;
+                        option.textContent = kategori;
+                        kategoriLayananSelect.appendChild(option);
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+    kategoriLayananSelect.addEventListener('change', function () {
+        const namaProduk = namaProdukSelect.value;
+        const kategoriLayanan = this.value;
+
+        // AJAX untuk mengambil harga berdasarkan nama produk dan kategori layanan
+        fetch(`/kategori-harga?nama_produk=${encodeURIComponent(namaProduk)}&kategori_layanan=${encodeURIComponent(kategoriLayanan)}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                } else {
+                    // Tampilkan harga di input readonly
+                    hargaInput.value = data.harga;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+    </script>
+
+        
+@endsection
+
+@push('scripts')
+    <!-- JS Libraries -->
+@endpush

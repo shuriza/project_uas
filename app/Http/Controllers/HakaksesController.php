@@ -71,9 +71,16 @@ class HakaksesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(hakakses $hakakses)
+    public function destroy($id)
     {
-        //
-        $hakakses->delete();
+        $hakakses = hakakses::find($id);
+    
+        if ($hakakses) {
+            $hakakses->delete();
+            return redirect()->route('hakakses.index')->with('message', 'Hak akses berhasil dihapus!');
+        }
+    
+        return redirect()->route('hakakses.index')->with('error', 'Data tidak ditemukan!');
     }
+    
 }

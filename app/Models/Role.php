@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class hakakses extends Model
+class Role extends Model
 {
     use HasFactory;
 
-    protected $table = 'users';
-    protected $fillable = ['role'];
+    protected $fillable = ['name'];
 
     public function users()
     {
-        return $this->hasMany(User::class, 'role', 'role');
+        return $this->hasMany(User::class);
     }
 }

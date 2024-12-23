@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\kategori;
 class Pesanan extends Model
 {
     use HasFactory;
@@ -15,10 +15,17 @@ class Pesanan extends Model
             'emailClient',
             'teleponClient',
             'alamatClient',
-            'namaProduk',
-            'kategori',
+            'nama_produk',
+            'kategori_layanan',
             'pembayaranMelalui',
             'tanggalPemasangan',
             'catatan',
+            'harga',
+            'status',
         ];
+
+        public function kategori()
+        {
+            return $this->belongsTo(Kategori::class);
+        }
 }
