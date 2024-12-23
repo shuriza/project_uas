@@ -7,6 +7,8 @@ Pemesanan
 dashboar
 
 akun superadmin
+surya@mail.com
+password :12345678
 
 # My Laravel Project
 
