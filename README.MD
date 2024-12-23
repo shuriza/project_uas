@@ -31,7 +31,7 @@ Ikuti langkah-langkah berikut untuk menginstal proyek di lokal Anda:
 1. **Clone Repository**
    Clone repository ke direktori lokal Anda:
 
-git clone https://github.com/shuriza/project_uas.git
+   git clone https://github.com/shuriza/project_uas.git
 
 2. **Masuk ke Direktori Proyek**
    Pindah ke folder proyek hasil clone:
